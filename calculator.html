@@ -1,0 +1,156 @@
+<!DOCTYPE html>s
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>JavaScript Practice</title>
+	<link rel="stylesheet" type="text/css" href="cal.css">
+</head>	
+
+<body onload="clear()">
+	<section class="content">
+		<div class="header">
+			<h2>JavaScript Practice Field</h2>
+		</div>
+		<div class="maincontent">
+
+		<form name="frm">
+			<table>
+				<caption>Math Object Examples</caption>
+				<tr>
+					<td>Input Box:</td>
+					<td><input type="text" name="getvalue" /></td>
+
+				</tr>
+				<tr>
+					<td><input type="button" onclick="claculate(1)" value="Absolute"/></td>
+					<td><input type="button" onclick="claculate(2)" value="Round"/></td>
+
+				</tr>
+				<tr>
+					<td><input type="button" onclick="claculate(3)" value="Sine"/></td>
+					<td><input type="button" onclick="claculate(4)" value="Cosine" /></td>
+
+				</tr>
+				<tr>
+					<td><input type="button" onclick="claculate(5)" value="Tangent"/></td>
+					<td><input type="button" onclick="claculate(6)" value="Log"/></td>
+
+				</tr>
+				<tr>
+					<td><input  type="button" onclick="claculate(7)" value="Floor"/></td>
+					<td><input  type="button" onclick="claculate(8)" value="Ceil"/></td>
+
+				</tr>
+				<tr>
+					<td><input  type="button" onclick="claculate(9)" value="Square Root"/></td>
+					<td><input  type="button" onclick="claculate(10)" value="Random"/></td>
+
+				</tr>
+				<tr>
+					<td><input  type="button" onclick="claculate(11)" value="Max"/></td>
+					<td><input  type="button" onclick="claculate(12)" value="Min"/></td>
+
+				</tr>
+				<tr>
+					<td><input  type="button" onclick="claculate(13)" value="E"/></td>
+					<td><input  type="button" onclick="claculate(14)" value="Pi"/></td>
+
+				</tr>
+				<tr>
+					<td>Result Box:</td>
+					<td><input type="text" name="showresult" value="" /></td>
+
+				</tr>
+
+			</table>
+
+		</form>			
+			<script>
+				
+				var claculate= function(process)
+				{	
+					with(document.frm)
+					switch(process){
+
+						case 1:
+						showresult.value= Math.abs(getvalue.value);
+						break;
+
+						case 2:
+						showresult.value=Math.round(getvalue.value);
+						break;
+
+						case 3:
+						showresult.value=Math.sin(convDegree(getvalue.value));
+						break;
+
+						case 4:
+						showresult.value=Math.cos(convDegree(getvalue.value));
+						break;
+
+						case 5:
+						showresult.value=Math.tan(convDegree(getvalue.value));
+						break;
+
+						case 6:
+						showresult.value=Math.log(getvalue.value);
+						break;
+
+						case 7:
+						showresult.value=Math.floor(getvalue.value);
+						break;
+
+						case 8:
+						showresult.value=Math.ceil(getvalue.value);
+						break;
+
+						case 9:
+						showresult.value=Math.sqrt(getvalue.value);
+						break;
+
+						case 10:
+						showresult.value=Math.random();
+						break;
+
+						case 11:
+						alert(Math.max(getvalue.value,prompt('Enter the number to compare','0'))+' is the greater number');
+						break;
+
+						case 12:
+						alert(Math.min(getvalue.value,prompt('Enter the number to compare','0'))+' is the smaller number');
+						break;
+
+						case 13:
+						showresult.value=Math.E;
+						break;
+
+						case 14:
+						showresult.value=Math.PI;
+						break;
+
+					}
+
+
+				}
+
+				var convDegree= function(x){
+
+					return x*22/7/180;
+				}
+				var clear=  function()
+				{
+					document.frm.getvalue.value='';
+					document.frm.showresult.value='';
+				}
+				
+
+			</script>
+
+		</div>
+		
+		<div class="footer">
+			<h2>Happy Practice..!!</h2>
+		</div>	
+	</section>	
+</body>	
+</html>
